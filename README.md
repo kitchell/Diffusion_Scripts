@@ -5,13 +5,13 @@ These scripts are written for use on IU's Karst supercomputing cluster.
 It is assumed that all files are within the /N/dc2/scratch/kitchell/Cadaver_diffusion/ folder 
 and that the data for each subject is in a folder /subj_num (replace num with the subject number). 
 
-First download the t1, dwi ap, and dwi pa zipped files and place them in a folder called
-subj_num in the Downloads folder in Karst.
+First download the t1, dwi AP, and dwi PA zipped files and place them in a folder called
+subj_num (replace num with the subject number i.e. subj_10004) in the Downloads folder in Karst.
 
 Then:
 ##1. from within the Cadaver_diffusion folder edit the initialize_subj script and change the subject number to the correct number for your subject
 1. this will create the subj folder 
-1. run make_directories, which will make all the other necessary folders
+1. cd into the subj folder and run make_directories, which will make all the other necessary folders
 2. copy the downloaded files to the correct folder and unzip them
 3. run dcm2nii on the files
 4. copy the nifti files to the correct folders and rename them
