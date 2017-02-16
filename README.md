@@ -34,7 +34,7 @@ Then:
       4. click finish
 5. run bet: bet t1_acpc.nii.gz t1_acpc_brain.nii.gz -m -f 0.40
   
-##4. spli the bvec shells
+##4. spli the bvec and bval shells
 1. cd into the main folder: Cadaver_diffusion
 2. edit the shell_splitting_batch script to have the correct subjects (you can do multiple at once)
 3.  run ./shell_splitting_batch
