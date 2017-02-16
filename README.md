@@ -41,8 +41,8 @@ Then:
   
 ##5. run dtiinit
 1. cd into the main folder: Cadaver_diffusion
-2.  edit the dti_init_batch script to have the correct subject number
-3.  make sure matlab is loaded and run ./dti_init_batch
+2.  edit the dtiinit_batch script to have the correct subject number
+3.  make sure matlab is loaded and run ./dtiinit_batch
 4.  once done check the quality of the data using dtiFiberUI (from vistasoft, ran in matlab, http://web.stanford.edu/group/vista/cgi-bin/wiki/index.php/MrDiffusion#Software_Set-Up)
 
 ##6. 
