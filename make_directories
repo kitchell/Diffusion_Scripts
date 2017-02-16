@@ -1,0 +1,17 @@
+#!/bin/bash
+
+mkdir diffusion_data
+mkdir diffusion_directory
+mkdir diffusion_directory/Anatomy
+mkdir diffusion_directory/bin
+mkdir diffusion_directory/diffusion
+mkdir diffusion_directory/raw
+mkdir diffusion_directory/RAW
+mkdir diffusion_directory/RAW/t1
+mkdir diffusion_directory/RAW/AP
+mkdir diffusion_directory/RAW/PA
+mkdir diffusion_directory/diffusion/AP
+mkdir diffusion_directory/diffusion/PA
+mkdir diffusion_data/1000
+mkdir diffusion_data/2000
+mkdir diffusion_data/fibers

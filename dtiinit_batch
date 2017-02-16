@@ -1,0 +1,30 @@
+#!/bin/bash -x
+
+## Shell script to set-up date directory for dti_init batch.  Developed by Brad Caron (IU Graduate Student, 2016) for use in microstructure of concussion-prone athletics study.
+
+## Set up variables
+datadir1="/N/dc2/scratch/kitchell/Cadaver_diffusion";  ## path to study directory
+subj="subj_9975"; # subjects from study
+diffdir1="$datadir1/$subj"; # stem directory
+stem="data"
+
+module load matlab
+
+for subjects in $subj
+	do
+		cd $diffdir1/diffusion_data
+		mkdir 1000/raw
+		mkdir 2000/raw
+		cp $diffdir1/diffusion_directory/Anatomy/t1_acpc_brain.nii.gz ./1000/t1_acpc_bet.nii.gz
+		cp $diffdir1/diffusion_directory/Anatomy/t1_acpc_brain.nii.gz ./2000/t1_acpc_bet.nii.gz
+		cp ./data_b1000.bvals ./1000/raw/bvals
+		cp ./data_b1000.bvecs ./1000/data_b1000.bvecs
+		cp ./data_b1000.nii.gz ./1000/raw/data_b1000.nii.gz
+		cp ./data_b2000.bvals ./2000/raw/bvals
+		cp ./data_b2000.bvecs ./2000/bvecs
+		cp ./data_b2000.nii.gz ./2000/raw/data_b2000.nii.gz
+		cp ./data_b1000.bvecs ./1000/raw/bvecs_real
+		cp ./data_b2000.bvecs ./2000/raw/bvecs_real
+		cp $datadir1/dti_init_batch.m ./dti_init_batch.m		
+		matlab -nodesktop -r "dti_init_batch"
+done

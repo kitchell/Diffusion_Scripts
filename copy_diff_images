@@ -1,0 +1,15 @@
+#!/bin/sh
+
+cp ./2017*MPRAGESAG*.nii.gz ./t1/
+cp ./*PA*.nii.gz ./PA/
+cp ./*AP*.nii.gz ./AP/
+cp ./*MPRAGESAG*.nii.gz ../Anatomy/
+cp ./*AP*.nii.gz ../diffusion/AP/
+cp ./*PA*.nii.gz ../diffusion/PA/
+cp ./bvals ../diffusion/
+cp ./bvals ../diffusion/AP/
+cp ./bvals ../diffusion/PA/
+cp ./bvecs ../diffusion/
+cp ./bvecs ../diffusion/AP/
+cp ./bvecs ../diffusion/PA/
+

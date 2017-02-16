@@ -1,0 +1,26 @@
+#!/bin/bash
+
+subj="subj_####"
+ 
+mkdir ./$subj
+cp ./make_directories ./$subj
+cd ./$subj
+./make_directories
+cp /N/dc2/scratch/kitchell/Cadaver_diffusion/subj_10005/diffusion_directory/bin/* /N/dc2/scratch/kitchell/Cadaver_diffusion/$subj/diffusion_directory/bin
+cp /N/dc2/scratch/kitchell/Cadaver_diffusion/subj_10005/diffusion_directory/diffusion/acq_params.txt ./diffusion_directory/diffusion/acq_params.txt
+cp  /N/dc2/scratch/kitchell/Cadaver_diffusion/subj_10005/diffusion_directory/RAW/copy_diff_images ./diffusion_directory/RAW/
+cp /N/u/kitchell/Karst/Downloads/$subj/* ./diffusion_directory/RAW/
+cd ./diffusion_directory/RAW/
+unzip *MP*.zip
+unzip *PA*.zip
+unzip *AP*.zip
+
+module load mricron
+dcm2nii *dcm
+
+mv *AP*.bval bvals
+mv *AP*.bvec bvecs
+./copy_diff_images
+cd ..
+mv ./AP/*.nii.gz ./AP/AP.nii.gz
+mv ./PA/*.nii.gz ./PA/PA.nii.gz
