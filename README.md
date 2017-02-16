@@ -10,11 +10,12 @@ subj_num (replace num with the subject number i.e. subj_10004) in the Downloads 
 
 Then:
 ##1. from within the Cadaver_diffusion folder edit the initialize_subj script and change the subject number to the correct number for your subject
-1. this will create the subj folder 
-1. cd into the subj folder and run make_directories, which will make all the other necessary folders
-2. copy the downloaded files to the correct folder and unzip them
-3. run dcm2nii on the files
-4. copy the nifti files to the correct folders and rename them
+this will:
+- create the subj folder 
+- run make_directories, which will make all the other necessary folders
+- copy the downloaded files to the correct folder and unzip them
+- run dcm2nii on the files
+- copy the nifti files to the correct folders and rename them
   
 ##2. run the fsl preprocessing steps:
 1. cd to the subj_num/diffusion_directory/bin folder and edit the diffusion_clean script change the subj number to be the number of the current subject
@@ -22,7 +23,7 @@ Then:
 3. run the run_batch_clean.pbs: qsub run_batch_clean.pbs
   
 ##3. Align the T1 image to ACPC
-1. this step asummes you have vistasoft (https://github.com/vistalab/vistasoft) and spm (http://www.fil.ion.ucl.ac.uk/spm/) installed and the paths added to matlab
+1. This step asummes you have vistasoft (https://github.com/vistalab/vistasoft) and spm (http://www.fil.ion.ucl.ac.uk/spm/) installed and the paths added to matlab
 2. cd into /subj_num/diffusion_directory/Anatomy
 3. start matlab 
   1. on karst: module load matlab
