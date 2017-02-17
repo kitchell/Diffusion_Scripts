@@ -11,7 +11,7 @@ function dti_init_batch
 %subj = 'subj_9946';
 
 % separate gradient shells
-b_vals = {'1000','2000'}; 
+b_vals = {'1000','2500'}; 
 
 % stem for data output
 stem = 'data';
