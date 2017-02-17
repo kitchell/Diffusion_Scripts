@@ -46,7 +46,7 @@ this will:
 3.  make sure matlab is loaded and run ./dtiinit_batch
 4.  once done check the quality of the data using dtiFiberUI (from vistasoft, ran in matlab, http://web.stanford.edu/group/vista/cgi-bin/wiki/index.php/MrDiffusion#Software_Set-Up)
 
-##6. run Freesurfer (https://surfer.nmr.mgh.harvard.edu/)
+##6. run Freesurfer (https://surfer.nmr.mgh.harvard.edu/) this can also be run earlier
 1. edit the run_freesurfer script to have the correct subj number and the correct output/error names
 2. run the script using qsub: qsub run_freesurfer
 3. this should run freesurfer and place the subject files in Karst/Applications/FS_subjects
