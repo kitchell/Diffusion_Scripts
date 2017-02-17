@@ -13,5 +13,5 @@ mkdir diffusion_directory/RAW/PA
 mkdir diffusion_directory/diffusion/AP
 mkdir diffusion_directory/diffusion/PA
 mkdir diffusion_data/1000
-mkdir diffusion_data/2000
+mkdir diffusion_data/2500
 mkdir diffusion_data/fibers
