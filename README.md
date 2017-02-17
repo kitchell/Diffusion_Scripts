@@ -35,7 +35,7 @@ this will:
       4. click finish
 5. run bet: bet t1_acpc.nii.gz t1_acpc_brain.nii.gz -m -f 0.40
   
-##4. spli the bvec and bval shells
+##4. split the bvec and bval shells
 1. cd into the main folder: Cadaver_diffusion
 2. edit the shell_splitting_batch script to have the correct subjects (you can do multiple at once)
 3.  run ./shell_splitting_batch
@@ -46,5 +46,6 @@ this will:
 3.  make sure matlab is loaded and run ./dtiinit_batch
 4.  once done check the quality of the data using dtiFiberUI (from vistasoft, ran in matlab, http://web.stanford.edu/group/vista/cgi-bin/wiki/index.php/MrDiffusion#Software_Set-Up)
 
-##6. 
+##6. make white matter mask
+1. 
   
