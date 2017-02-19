@@ -1,0 +1,25 @@
+#!/bin/bash
+
+subj="subj_10024"
+
+
+##load freesurfer
+module load freesurfer
+
+#setup freesurfer
+export SUBJECTS_DIR=/N/u/kitchell/Karst/Applications/FS_subjects
+source $FREESURFER_HOME/SetUpFreeSurfer.sh
+
+cd $SUBJECTS_DIR/$subj/mri
+
+mri_convert aparc+aseg.mgz aparc+aseg.nii.gz
+
+cp $SUBJECTS_DIR/$subj/mri/aparc+aseg.nii.gz /N/dc2/scratch/kitchell/Cadaver_diffusion/$subj/diffusion_directory/Anatomy
+
+cd /N/dc2/scratch/kitchell/Cadaver_diffusion
+
+module load matlab
+
+matlab -nodisplay -nojvm -r "fs_make_wm_mask('subj_10024')";exit;
+
+
