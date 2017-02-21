@@ -9,7 +9,7 @@ cd ./$subj
 ./make_directories
 cp $datadir/reorgDTI $datadir/$subj/diffusion_directory/bin/reorgDTI
 cp $datadir/diffusion_clean $datadir/$subj/diffusion_directory/bin/diffusion_clean
-
+cp $datadir/run_batch_clean.pbs $datadir/$subj/diffusion_directory/bin/run_batch_clean.pbs
 cp $datadir/acq_params.txt $datadir/$subj/diffusion_directory/diffusion/acq_params.txt
 cp  $datadir/copy_diff_images $datadir/$subj/diffusion_directory/RAW/
 cp /N/u/kitchell/Karst/Downloads/$subj/* $datadir/$subj/diffusion_directory/RAW/
