@@ -9,7 +9,9 @@ First download the t1, DWI AP, and DWI PA zipped files and place them in a folde
 subj_num (replace num with the subject number i.e. subj_10004) in the Downloads folder on Karst.
 
 Then:
-##1. From within the Cadaver_diffusion folder, edit the initialize_subj script and change the subject number to the correct number for your subject
+##1. Initial subject
+1. From within the Cadaver_diffusion folder, edit the initialize_subj script and change the subject number to the correct number for your subject
+2. run ./initialize_subj
 this will:
 - create the subj folder 
 - run make_directories, which will make all the other necessary folders
