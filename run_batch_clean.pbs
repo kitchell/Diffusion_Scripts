@@ -1,12 +1,16 @@
 #!/bin/bash
 #PBS -l nodes=1:ppn=16
 #PBS -l walltime=3:00:00
-#PBS -N 9946_dif_clean
-#PBS -o 9946_dif_clean.output
-#PBS -e 9946_dif_clean.error
+#PBS -N 10041_dif_clean
+#PBS -o 10041_dif_clean.output
+#PBS -e 10041_dif_clean.error
 #PBS -m abe 
 #PBS -M kitchell@indiana.edu 
 
-cd $PBS_O_WORKDIR
 
-./bin/diffusion_clean
+subj="subj_10041"
+datadir="/N/dc2/scratch/kitchell/Cadaver_diffusion"
+
+cd $datadir/$subj/diffusion_directory/bin
+
+./diffusion_clean
