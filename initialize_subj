@@ -1,15 +1,18 @@
 #!/bin/bash
 
-subj="subj_####"
+subj="subj_10041"
+datadir="/N/dc2/scratch/kitchell/Cadaver_diffusion"
  
 mkdir ./$subj
 cp ./make_directories ./$subj
 cd ./$subj
 ./make_directories
-cp /N/dc2/scratch/kitchell/Cadaver_diffusion/subj_10005/diffusion_directory/bin/* /N/dc2/scratch/kitchell/Cadaver_diffusion/$subj/diffusion_directory/bin
-cp /N/dc2/scratch/kitchell/Cadaver_diffusion/subj_10005/diffusion_directory/diffusion/acq_params.txt ./diffusion_directory/diffusion/acq_params.txt
-cp  /N/dc2/scratch/kitchell/Cadaver_diffusion/subj_10005/diffusion_directory/RAW/copy_diff_images ./diffusion_directory/RAW/
-cp /N/u/kitchell/Karst/Downloads/$subj/* ./diffusion_directory/RAW/
+cp $datadir/reorgDTI $datadir/$subj/diffusion_directory/bin/reorgDTI
+cp $datadir/diffusion_clean $datadir/$subj/diffusion_directory/bin/diffusion_clean
+
+cp $datadir/acq_params.txt $datadir/$subj/diffusion_directory/diffusion/acq_params.txt
+cp  $datadir/copy_diff_images $datadir/$subj/diffusion_directory/RAW/
+cp /N/u/kitchell/Karst/Downloads/$subj/* $datadir/$subj/diffusion_directory/RAW/
 cd ./diffusion_directory/RAW/
 unzip *MP*.zip
 unzip *PA*.zip
@@ -22,5 +25,5 @@ mv *AP*.bval bvals
 mv *AP*.bvec bvecs
 ./copy_diff_images
 cd ..
-mv ./AP/*.nii.gz ./AP/AP.nii.gz
-mv ./PA/*.nii.gz ./PA/PA.nii.gz
+mv ./diffusion/AP/*.nii.gz ./diffusion/AP/AP.nii.gz
+mv ./diffusion/PA/*.nii.gz ./diffusion/PA/PA.nii.gz
