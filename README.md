@@ -22,7 +22,7 @@ this will:
   
 ##2. Run the fsl preprocessing steps:
 1. cd to the subj_num/diffusion_directory/bin folder and edit the diffusion_clean script, change the subj number to be the number of the current subject
-2. cd back to /diffusion_directory and edit the run_batch_clean.pbs script to have the correct subject numbers
+2. edit the run_batch_clean.pbs script to have the correct subject number
 3. run the run_batch_clean.pbs: qsub run_batch_clean.pbs
   
 ##3. Align the T1 image to ACPC
