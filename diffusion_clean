@@ -1,0 +1,36 @@
+#!/bin/bash
+
+##load modules
+
+module load fsl/5.0.9
+
+##set up variables
+
+datadir1="/N/dc2/scratch/kitchell/Cadaver_diffusion";
+subj="subj_10006";
+diffdir1="$datadir1/$subj/diffusion_directory/diffusion";
+diffphase="PA AP";
+
+## eddy-current correction, reorganization of output, combination to make a no 
+## diffusion mean file, and perform bet
+
+
+
+for phase in $diffphase
+    	  do
+		cd $diffdir1/$phase;
+		eddy_correct $phase r$phase 0;
+		. $datadir1/$subj/diffusion_directory/bin/reorgDTI r$phase;
+		fslmaths nodif -Tmean ${phase}_nodif_mean;
+		bet ${phase}_nodif_mean nodif_brain -f 0.4 -g 0 -m;
+done
+
+
+## merge directions, apply top-up, fit tensors
+
+cd $diffdir1
+fslmerge -t b0_images ./PA/PA_nodif_mean ./AP/AP_nodif_mean 
+topup --imain=b0_images.nii.gz --datain=acq_params.txt --config=b02b0.cnf --out=my_topup_results --fout=my_field --iout=my_unwarped_images
+applytopup --imain=./PA/rPA.nii.gz,./AP/rAP.nii.gz --datain=acq_params.txt --inindex=1,2 --topup=my_topup_results --out=data  ## applying top-up
+bet data nodif_brain -f 0.4 -g 0 -m ## brain extraction on combined data image
+dtifit --data=data --out=dti --mask=nodif_brain_mask --bvecs=bvecs --bvals=bvals ## fits tensor model

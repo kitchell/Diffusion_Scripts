@@ -1,0 +1,8 @@
+#!/bin/sh
+
+fslsplit $1 
+fslmerge -t nodif vol0000 vol0016 vol0032 vol0048 vol0064;
+rm vol0000.nii.gz vol0016.nii.gz vol0032.nii.gz vol0048.nii.gz vol0064.nii.gz
+fslmerge -t dif vol*
+rm vol*
+fslmerge -t reorgdata nodif dif
