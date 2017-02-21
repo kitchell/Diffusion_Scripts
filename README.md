@@ -12,6 +12,7 @@ Then:
 ##1. Initial subject
 1. From within the Cadaver_diffusion folder, edit the initialize_subj script and change the subject number to the correct number for your subject
 2. run ./initialize_subj
+
 this will:
 - create the subj folder 
 - run make_directories, which will make all the other necessary folders
