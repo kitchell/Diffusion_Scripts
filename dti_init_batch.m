@@ -5,16 +5,12 @@ function dti_init_batch
 % https://github.com/vistalab/vistasoft/blob/master/mrDiffusion/dtiInit/dtiInit.m
 %
 % 2017 Brad Caron Indiana University, Pestilli Lab
+% modified for use by Lindsey Kitchell (IU graduate student 2017)
 
-% build paths
-% subjects for study
-%subj = 'subj_9946';
+% this script is called by the dtiinit_batch script, which will place you in the subjects directory
 
 % separate gradient shells
 b_vals = {'1000','2500'}; 
-
-% stem for data output
-stem = 'data';
 
 % path to study directory
 projdir1 = '/N/dc2/scratch/kitchell/Cadaver_diffusion'; 
