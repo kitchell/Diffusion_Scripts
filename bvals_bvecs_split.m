@@ -1,17 +1,11 @@
 function bvals_bvecs_split
 
-%% Matlab script for splitting shells and generating data, bvec and bval files for each shell in multi-shell data. Script developed by Franco Pestilli (2014); adapted and used by Brad Caron (IU Graduate Student, 2016) for the microstructure in concussion-prone athletics study.
-
-
-% seperate bvals/bvecs
-% build paths
-%subj = 'subj_9946 subj_9975 subj_10004 subj_10005 subj_10006 subj_10011 subj_10012 subj_15 subj_10015 subj_10016 subj_10019 subj_10024 subj_10034'; % subject; add all subjects for batch
-%subj = 'subj_9946';
-b_vals = {'1000','2500'}; % separate shells
-stem = 'data'; % stem used for writing output files
-projdir1 = '/N/dc2/scratch/kitchell/Cadaver_diffusion'; % path to data directory
+%% Matlab script for splitting shells and generating data, bvec and bval files for each shell in multi-shell data. 
+%Script developed by Franco Pestilli (2014); adapted by Brad Caron (IU Graduate Student, 2016)
+%Further adapted by Lindsey Kitchell (IU Graduate Student, 2017)
 
 % Split data into two separate files (BVALS = 1000 and 2500).
+b_vals = {'1000','2500'}; % separate shells
 
 bvals = dlmread('data.bvals');
 bvals = round(bvals./100)*100;
