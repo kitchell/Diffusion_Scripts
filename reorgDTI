@@ -1,4 +1,5 @@
 #!/bin/sh
+## Script to reorganize the diffusion files, it pulls out all the b0 images and places them at the front.
 
 fslsplit $1 
 fslmerge -t nodif vol0000 vol0016 vol0032 vol0048 vol0064;
