@@ -1,14 +1,16 @@
 function fs_make_wm_mask(subj)
-%
 % This script makes the white-matter mask used to track the connectomes in
 % Caiafa and Pestilli Manuscript.
-%
 % Copyright Franco Pestilli (c) Indiana University, 2016
+% modified for use by Lindsey Kitchell (IU graduate student 2017)
+
+%input:
+%subj = folder name for subject
 
 % Get the base directory for the data
 anatomypath = '/N/dc2/scratch/kitchell/Cadaver_diffusion/';
 
-
+%file name for output
 wmMaskFile = fullfile(anatomypath,subj,'diffusion_directory','Anatomy','wm_mask.nii.gz');
 
 fs_wm = fullfile(anatomypath,subj,'diffusion_directory','Anatomy','aparc+aseg.nii.gz');
