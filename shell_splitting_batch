@@ -3,8 +3,8 @@
 
 ## Script for splitting shells of multi-shell diffusion data.  This script will call to a matlab script that will
 ## create individual data files, bvecs and bvals for each shell and will also create a .b file that is needed for mrtrix_ensemble.
-## Written by Franco Pestilli, modified for use in white matter microstructure of concussion-prone
-## athletics study (Brad Caron, graduate student) Indiana University 2016.
+## Written by Franco Pestilli, modified by Brad Caron (IU graduate student 2016) 
+## Adapted for use by Lindsey Kitchell (IU graduate student 2017)
 
 ## make sure mrtrix is loaded
 module unload mrtrix/0.3.12
