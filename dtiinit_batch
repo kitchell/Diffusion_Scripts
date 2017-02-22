@@ -1,12 +1,12 @@
 #!/bin/bash -x
 
-## Shell script to set-up date directory for dti_init batch.  Developed by Brad Caron (IU Graduate Student, 2016) for use in microstructure of concussion-prone athletics study.
+## Shell script to set-up date directory for dti_init batch.  
+## Developed by Brad Caron (IU Graduate Student, 2016)
+## Modified for use by Lindsey Kitchell (IU graduate student 2017)
 
 ## Set up variables
 datadir1="/N/dc2/scratch/kitchell/Cadaver_diffusion";  ## path to study directory
 subj="subj_10024 subj_10019 subj_10016 subj_10015 subj_10012 subj_10011"; # subjects from study
-##diffdir1="$datadir1/$subj"; # stem directory
-stem="data"
 
 module load matlab
 
