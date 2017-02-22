@@ -1,4 +1,7 @@
 #!/bin/bash
+## Script to automate the directory creation for each subject
+## Written by Lindsey Kitchell (IU graduate student 2017)
+
 
 mkdir diffusion_data
 mkdir diffusion_directory
