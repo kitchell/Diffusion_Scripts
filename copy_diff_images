@@ -1,4 +1,6 @@
 #!/bin/sh
+##Script for copying the diffusion MRI nifti, bvecs, and bvals files into the correct folders for further processing
+##Created by Lindsey Kitchell (IU graduate student 2017)
 
 cp ./2017*MPRAGESAG*.nii.gz ./t1/
 cp ./*PA*.nii.gz ./PA/
