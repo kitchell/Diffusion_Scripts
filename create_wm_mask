@@ -1,7 +1,11 @@
 #!/bin/bash
 
-subj="subj_10024"
+##Script for creating a white matter mask based on freesurfer output. This script will call a matlab function called
+## fs_make_wm_mask. Written by Lindsey Kitchell (IU graduate student 2017)
 
+#subj folder name
+subj="subj_10024"
+datadir="/N/dc2/scratch/kitchell/Cadaver_diffusion"
 
 ##load freesurfer
 module load freesurfer
@@ -12,11 +16,13 @@ source $FREESURFER_HOME/SetUpFreeSurfer.sh
 
 cd $SUBJECTS_DIR/$subj/mri
 
+#convert file types
 mri_convert aparc+aseg.mgz aparc+aseg.nii.gz
 
-cp $SUBJECTS_DIR/$subj/mri/aparc+aseg.nii.gz /N/dc2/scratch/kitchell/Cadaver_diffusion/$subj/diffusion_directory/Anatomy
+cp $SUBJECTS_DIR/$subj/mri/aparc+aseg.nii.gz $datadir/$subj/diffusion_directory/Anatomy
 
-cd /N/dc2/scratch/kitchell/Cadaver_diffusion
+#move to the data directory
+cd $datadir
 
 module load matlab
 
