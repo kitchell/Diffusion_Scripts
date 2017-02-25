@@ -60,5 +60,7 @@ this will:
 3. this should create the wm_mask.nii.gz file in the Anatomy folder
 
 ##8. Do ensemble tractography using MRtrix
-1. in the Cadaver_diffusion folder, edit ensemble_tractography to have the correct subj. number
+1. in the Cadaver_diffusion folder, edit ensemble_tractography_1000 and ensemble_tractography_2500 to have the correct subj. number
+2. run ./ensemble_tractography_1000/2500 for each shell
+3.
 
